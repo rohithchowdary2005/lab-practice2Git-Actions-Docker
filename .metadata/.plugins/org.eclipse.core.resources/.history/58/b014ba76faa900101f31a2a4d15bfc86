@@ -1,0 +1,5 @@
+package com.klef.devops.model;
+
+public class Movie {
+
+}

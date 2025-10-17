@@ -1,0 +1,90 @@
+package com.klef.devops.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "movie_table")
+public class Movie {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "movie_id")
+    private Long movieId;
+
+    @Column(name = "title", nullable = false, length = 100)
+    private String title;
+
+    @Column(name = "director", nullable = false, length = 50)
+    private String director;
+
+    @Column(name = "genre", nullable = false, length = 30)
+    private String genre;
+
+    @Column(name = "rating", nullable = false)
+    private double rating;
+
+    @Column(name = "release_year", nullable = false)
+    private int releaseYear;
+
+   
+
+    public Long getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(Long movieId) {
+        this.movieId = movieId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie [movieId=" + movieId + ", title=" + title + ", director=" + director + ", genre=" + genre
+                + ", rating=" + rating + ", releaseYear=" + releaseYear + "]";
+    }
+}
+
